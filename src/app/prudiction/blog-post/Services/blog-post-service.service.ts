@@ -15,7 +15,7 @@ export class BlogPostServiceService {
 
   createblogposts(model:Addblogposts):Observable<blogpostmodel>
   {
-    return this.http.post<blogpostmodel>(environment.baseurl+'/api/BlogPost',model)
+    return this.http.post<blogpostmodel>(environment.baseurl+'/api/BlogPost?addAuth=true',model)
   }
   GetAllblogposts():Observable<blogpostmodel[]>
   {
@@ -31,10 +31,10 @@ export class BlogPostServiceService {
   }
  UpdateBlogposts(id:string,model:UpdateBlogpost):Observable<blogpostmodel>
  {
-  return this.http.put<blogpostmodel>(environment.baseurl+'/api/BlogPost/'+id,model)
+  return this.http.put<blogpostmodel>(environment.baseurl+'/api/BlogPost/'+id+'?addAuth=true',model)
  }
  deleteblogposts(id:string):Observable<blogpostmodel>
  {
-  return this.http.delete<blogpostmodel>(environment.baseurl+('/api/BlogPost/'+id))
+  return this.http.delete<blogpostmodel>(environment.baseurl+('/api/BlogPost/'+id+'?addAuth=true'))
  }
 }

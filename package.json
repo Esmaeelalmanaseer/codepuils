@@ -22,6 +22,7 @@
     "@angular/router": "^16.0.0",
     "clipboard": "^2.0.11",
     "emoji-toolkit": "^8.0.0",
+    "jwt-decode": "^4.0.0",
     "katex": "^0.16.0",
     "marked": "^4.3.0",
     "mermaid": "^10.6.0",

@@ -9,6 +9,7 @@ import { EditBlogpostComponent } from './prudiction/blog-post/edit-blogpost/edit
 import { HomeComponent } from './prudiction/public/home/home.component';
 import { BlogDetailsComponent } from './prudiction/public/blog-details/blog-details.component';
 import { LogInComponent } from './prudiction/Auth/log-in/log-in.component';
+import { authGuard } from './prudiction/Auth/Guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -21,11 +22,13 @@ const routes: Routes = [
   },
   {
     path:'admin/categores',
-    component:ListCategoryComponent
+    component:ListCategoryComponent,
+    canActivate:[authGuard]
   },
   {
     path:'admin/categores/add',
-    component:AddCategoryComponent
+    component:AddCategoryComponent,
+    canActivate:[authGuard]
   },
   {
     path:'admin/categores/:id',
@@ -33,19 +36,23 @@ const routes: Routes = [
   },
   {
     path:'admin/blogposts',
-    component:BlogpostListComponent
+    component:BlogpostListComponent,
+    canActivate:[authGuard]
   },
   {
     path:'admin/blogposts/add',
-    component:AddBlogpostsComponent
+    component:AddBlogpostsComponent,
+    canActivate:[authGuard]
   },
   {
     path:'admin/blogposts/:id',
-    component:EditBlogpostComponent
+    component:EditBlogpostComponent,
+    canActivate:[authGuard]
   },
   {
     path:'login',
-    component:LogInComponent
+    component:LogInComponent,
+    
   }
 ];
 
